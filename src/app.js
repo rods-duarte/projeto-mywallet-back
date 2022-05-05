@@ -3,8 +3,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import chalk from 'chalk';
 
-import db from './database/index.js';
-
 const app = express();
 app.use(json());
 app.use(cors());

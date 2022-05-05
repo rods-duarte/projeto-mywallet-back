@@ -17,7 +17,7 @@
     ],
     "rules": {
         "import/extensions": "off",
-        "no-magic-numbers": "error",
+        "no-underscore-dangle": "off",
         "prettier/prettier": "error"
     }
 }
