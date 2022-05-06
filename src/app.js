@@ -3,15 +3,19 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import chalk from 'chalk';
 
-import { login, register } from './controllers/authController.js';
+import authRouter from './routes/authRouter.js';
+import userRouter from './routes/userRouter.js';
 
 const app = express();
+// middlewares
 app.use(json());
 app.use(cors());
-dotenv.config({ path: './src/config/config.env' });
 
-app.post('/sign-in', login);
-app.post('/sign-up', register);
+// routes
+app.use(authRouter);
+app.use(userRouter);
+
+dotenv.config({ path: './src/config/config.env' });
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
